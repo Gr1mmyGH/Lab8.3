@@ -1,0 +1,18 @@
+<!-- myapp/templates/myapp/exam_form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Exam</title>
+</head>
+<body>
+    <h1>Edit Exam</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'exams_list' %}">Back to Exams List</a>
+</body>
+</html>

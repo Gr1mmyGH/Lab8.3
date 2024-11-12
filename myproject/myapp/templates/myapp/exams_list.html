@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exams List</title>
+</head>
+<body>
+    <h1>List of Exams</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Student</th>
+                <th>Subject</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for exam in exams %}
+                <tr>
+                    <td>{{ exam.id }}</td>
+                    <td>{{ exam.date }}</td>
+                    <td>{{ exam.student }}</td>
+                    <td>{{ exam.subject }}</td>
+                    <td>{{ exam.grade }}</td>
+                    <td><a href="{% url 'exam_edit' exam.id %}">Edit</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

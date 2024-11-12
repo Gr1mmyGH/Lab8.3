@@ -1,0 +1,18 @@
+<!-- myapp/templates/myapp/subject_form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Subject</title>
+</head>
+<body>
+    <h1>Edit Subject</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'subjects_list' %}">Back to Subjects List</a>
+</body>
+</html>

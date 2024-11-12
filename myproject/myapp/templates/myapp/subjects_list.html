@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subjects List</title>
+</head>
+<body>
+    <h1>List of Subjects</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Hours</th>
+                <th>Semesters</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for subject in subjects %}
+                <tr>
+                    <td>{{ subject.id }}</td>
+                    <td>{{ subject.name }}</td>
+                    <td>{{ subject.hours }}</td>
+                    <td>{{ subject.semesters }}</td>
+                    <td><a href="{% url 'subject_edit' subject.id %}">Edit</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

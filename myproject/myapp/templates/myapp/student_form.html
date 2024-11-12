@@ -1,0 +1,18 @@
+<!-- myapp/templates/myapp/student_form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+</head>
+<body>
+    <h1>Edit Student</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'students_list' %}">Back to Students List</a>
+</body>
+</html>
